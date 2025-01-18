@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevPortfolio</title>
-    
+
     <!-- CSS Dependencies -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/locomotive-scroll/4.1.4/locomotive-scroll.min.css">
-    
+
     <!-- JavaScript Dependencies -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/locomotive-scroll/4.1.4/locomotive-scroll.min.js"></script>
-    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/locomotive-scroll/4.1.4/locomotive-scroll.min.js"></script>
+
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -318,7 +318,7 @@
             .hero h1 {
                 font-size: 3rem;
             }
-            
+
             .hero p {
                 font-size: 1.4rem;
             }
@@ -336,23 +336,23 @@
       .skills-container {
         margin-bottom: 2rem;
       }
-      
+
       .skill-tag {
           cursor: pointer;
       }
-      
+
       .skill-tag.active {
           background: var(--highlight);
           color: var(--bg-primary);
       }
-      
+
       .skill-content-container {
           position: relative;
           height: 0;
           overflow: hidden;
           transition: height 0.5s ease;
       }
-      
+
       .skill-content {
           position: absolute; /* Changed from relative */
           top: 0;
@@ -368,24 +368,24 @@
           transition: opacity 0.3s ease, transform 0.3s ease;
           visibility: hidden; /* Added visibility */
       }
-      
+
       .skill-content.active {
           opacity: 1;
           transform: translateY(0);
           visibility: visible; /* Added visibility */
       }
-      
+
       .skill-content h3 {
           color: var(--highlight);
           margin-bottom: 1rem;
           font-size: 1.8rem;
       }
-      
+
       .skill-content p {
           margin-bottom: 1rem;
           line-height: 1.6;
       }
-      
+
       .example-code {
           background: var(--secondary);
           padding: 1rem;
@@ -431,7 +431,7 @@
         .main-nav.visible {
             transform: translateY(0);
         }
-      
+
     </style>
 </head>
 <body data-scroll-container>
@@ -450,7 +450,7 @@
     <section class="about-section">
         <div class="content-container">
             <h1 class="title-sequence">About Me</h1>
-            
+
             <div class="bio-text">
               <p>
                   Hi, I’m <span class="highlight-word">Fred</span>, and I’m passionate about
@@ -462,7 +462,7 @@
               </p>
           </div><br
 
-            
+
             <div class="skills-container">
               <div class="skill-tag" data-skill="javascript">Websites</div>
               <div class="skill-tag" data-skill="webgl">3D Printing</div>
@@ -471,7 +471,7 @@
               <div class="skill-tag" data-skill="gsap">School</div>
               <div class="skill-tag" data-skill="css">Even More</div>
           </div>
-          
+
           <div class="skill-content-container">
             <div class="skill-content" id="javascript-content">
                 <h3>Websites</h3>
@@ -482,7 +482,7 @@
                     <li>A fish related online encyclopedia</li>
                 </ul>
             </div>
-        
+
             <div class="skill-content" id="webgl-content">
                 <h3>3D Printing</h3>
                 <p>I love 3D printing and design, creating both functional and decorative pieces. Shout if you want me to 3D stuff for you (just pay for the filament). Some stuff I have made and loved:</p>
@@ -491,7 +491,7 @@
                     <li>Fun giraffe desk toy</li>
                 </ul>
             </div>
-        
+
             <div class="skill-content" id="threejs-content">
                 <h3>Achievements</h3>
                 <p>Where to start😂, Some of the awards I have got include</p>
@@ -501,12 +501,12 @@
                     <li>Subject awards including DT</li>
                 </ul>
             </div>
-        
+
             <div class="skill-content" id="react-content">
                 <h3>Learn HTML</h3>
                 <p>If you would like to learn HTML from me or another langauge then contact me from the form at the bottom.</p>
             </div>
-        
+
             <div class="skill-content" id="gsap-content">
                 <h3>School</h3>
                 <p>My educational background:</p>
@@ -517,7 +517,7 @@
                     <li>If you are here to ask for revision notes then fill out the form pls.</li>
                 </ul>
             </div>
-        
+
             <div class="skill-content" id="css-content">
                 <h3>Even More</h3>
                 <p>Additional skills and interests:</p>
@@ -566,21 +566,22 @@
     </section>
 
     <!-- Contact Section -->
+
     <section class="contact">
         <h2 class="section-title">Get in Touch</h2>
         <div class="contact-container">
-            <form class="contact-form">
+            <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" required placeholder="Your name">
+                    <input type="text" id="name" name="name" required placeholder="Your name">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" required placeholder="Your email">
+                    <input type="email" id="email" name="email" required placeholder="Your email">
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" rows="5" required placeholder="Your message"></textarea>
+                    <textarea id="message" name="message" rows="5" required placeholder="Your message"></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
@@ -588,173 +589,177 @@
     </section>
 
     <script>
+    document.addEventListener('DOMContentLoaded', () => {
         // Theme toggle functionality
-    const themeToggle = document.querySelector('.theme-toggle');
-    
-    function toggleTheme() {
-        const body = document.body;
-        const currentTheme = body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        body.setAttribute('data-theme', newTheme);
-        
-        // Save theme preference
-        localStorage.setItem('theme', newTheme);
-    }
+        const themeToggle = document.querySelector('.theme-toggle');
 
-    // Set initial theme based on user preference
-    function setInitialTheme() {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.body.setAttribute('data-theme', savedTheme);
-        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.setAttribute('data-theme', 'dark');
-        } else {
-            document.body.setAttribute('data-theme', 'light');  // Set default to light theme
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
         }
-    }
 
-    themeToggle.addEventListener('click', toggleTheme);
-    setInitialTheme();  // Ensure the theme is set when the page loads
+        function setInitialTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.setAttribute('data-theme', 'dark');
+            }
+        }
 
-        // Initialize animations
-        document.addEventListener('DOMContentLoaded', () => {
-        gsap.registerPlugin(ScrollTrigger);
-    
-        // Hero animations
-        gsap.from('.hero-content', {
-            opacity: 0,
-            y: 50,
-            duration: 1.5,
-            ease: 'power4.out'
+        themeToggle.addEventListener('click', toggleTheme);
+        setInitialTheme();
+
+        // Make sure GSAP is loaded
+        if (typeof gsap !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Set initial opacity to 1 for all animated elements
+            gsap.set(['.hero-content', '.title-sequence', '.bio-text p', '.skill-tag', '.project-card', '.contact-container'], {
+                opacity: 1,
+                y: 0,
+                scale: 1
+            });
+
+            // Remove any existing ScrollTrigger instances
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+
+            // Initialize simple fade-in animations without scroll triggers
+            gsap.from('.hero-content', {
+                opacity: 0,
+                y: 50,
+                duration: 1.5,
+                ease: 'power4.out'
+            });
+
+            gsap.from('.title-sequence', {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                delay: 0.5
+            });
+
+            gsap.from('.bio-text p', {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                stagger: 0.2,
+                delay: 0.7
+            });
+        }
+
+        // Skills interaction
+        const skillTags = document.querySelectorAll('.skill-tag');
+        const skillContentContainer = document.querySelector('.skill-content-container');
+        const skillContents = document.querySelectorAll('.skill-content');
+        let activeContent = null;
+        let activeTag = null;
+
+        // Initialize skill content container with some height
+        skillContentContainer.style.height = '0px';
+
+        function showContent(skillName) {
+            if (activeContent) {
+                activeContent.classList.remove('active');
+                if (activeTag) {
+                    activeTag.classList.remove('active');
+                }
+            }
+
+            const content = document.getElementById(`${skillName}-content`);
+            if (content) {
+                // Force a reflow to ensure proper height calculation
+                void content.offsetHeight;
+
+                content.classList.add('active');
+                skillContentContainer.style.height = `${content.offsetHeight}px`;
+                activeContent = content;
+            } else {
+                skillContentContainer.style.height = '0px';
+            }
+        }
+
+        skillTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const skillName = tag.dataset.skill;
+
+                if (activeTag === tag) {
+                    skillContentContainer.style.height = '0px';
+                    tag.classList.remove('active');
+                    if (activeContent) {
+                        activeContent.classList.remove('active');
+                    }
+                    activeTag = null;
+                    activeContent = null;
+                } else {
+                    if (activeTag) {
+                        activeTag.classList.remove('active');
+                    }
+                    tag.classList.add('active');
+                    activeTag = tag;
+                    showContent(skillName);
+                }
+            });
         });
-    
-        // About section animations
-        gsap.from('.title-sequence', {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            scrollTrigger: {
-                trigger: '.about-section',
-                start: 'top center+=100',
-                toggleActions: 'play none none reverse'
+
+        // Add resize observer
+        const resizeObserver = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                if (entry.target.classList.contains('active')) {
+                    skillContentContainer.style.height = `${entry.target.offsetHeight}px`;
+                }
             }
         });
-    
-        gsap.from('.bio-text p', {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: '.bio-text',
-                start: 'top center+=100',
-                toggleActions: 'play none none reverse'
-            }
+
+        skillContents.forEach(content => {
+            resizeObserver.observe(content);
         });
-    
-        gsap.from('.skill-tag', {
-            opacity: 0,
-            scale: 0.8,
-            duration: 0.5,
-            stagger: 0.1,
-            scrollTrigger: {
-                trigger: '.skills-container',
-                start: 'top center+=100',
-                toggleActions: 'play none none reverse'
-            }
-        });
-    
-        // Project cards animation
-        gsap.from('.project-card', {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: '.projects',
-                start: 'top center+=100',
-                toggleActions: 'play none none reverse'
-            }
-        });
-    
-        // Contact form animation
-        gsap.from('.contact-container', {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            scrollTrigger: {
-                trigger: '.contact',
-                start: 'top center+=100',
-                toggleActions: 'play none none reverse'
-            }
+
+        // Initialize scroll progress bar
+        const progressBar = document.querySelector('.progress-bar');
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            progressBar.style.width = `${scrolled}%`;
         });
     });
+    </script>
+    <script>
+    async function handleSubmit(event) {
+        event.preventDefault();
 
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value,
+            to: 'bananached1@gmail.com'
+        };
 
-      // Skill tags interaction
-      document.addEventListener('DOMContentLoaded', () => {
-          const skillTags = document.querySelectorAll('.skill-tag');
-          const skillContentContainer = document.querySelector('.skill-content-container');
-          const skillContents = document.querySelectorAll('.skill-content');
-          let activeContent = null;
-          let activeTag = null;
-      
-          function showContent(skillName) {
-              // Hide current active content
-              if (activeContent) {
-                  activeContent.classList.remove('active');
-                  if (activeTag) {
-                      activeTag.classList.remove('active');
-                  }
-              }
-      
-              // Show new content
-              const content = document.getElementById(`${skillName}-content`);
-              if (content) {
-                  skillContentContainer.style.height = `${content.offsetHeight}px`;
-                  content.classList.add('active');
-                  activeContent = content;
-              } else {
-                  skillContentContainer.style.height = '0px';
-              }
-          }
-      
-          skillTags.forEach(tag => {
-              tag.addEventListener('click', () => {
-                  const skillName = tag.dataset.skill;
-                  
-                  if (activeTag === tag) {
-                      // If clicking the same tag, close the content
-                      skillContentContainer.style.height = '0px';
-                      tag.classList.remove('active');
-                      if (activeContent) {
-                          activeContent.classList.remove('active');
-                      }
-                      activeTag = null;
-                      activeContent = null;
-                  } else {
-                      // Show new content
-                      tag.classList.add('active');
-                      activeTag = tag;
-                      showContent(skillName);
-                  }
-              });
-          });
-      
-          // Add resize observer to handle content height changes
-          const resizeObserver = new ResizeObserver(entries => {
-              for (let entry of entries) {
-                  if (entry.target.classList.contains('active')) {
-                      skillContentContainer.style.height = `${entry.target.offsetHeight}px`;
-                  }
-              }
-          });
-      
-          skillContents.forEach(content => {
-              resizeObserver.observe(content);
-          });
-      });
+        try {
+            const response = await fetch('https://formsubmit.co/bananached1@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
 
+            if (response.ok) {
+                alert('Message sent successfully!');
+                document.getElementById('contactForm').reset();
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            alert('There was an error sending your message. Please try again later.');
+            console.error('Error:', error);
+        }
+    }
     </script>
 </body>
 </html>
