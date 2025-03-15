@@ -39,6 +39,60 @@
             --card-border: rgba(100, 255, 218, 0.2);
         }
 
+        [data-theme="industrial"] {
+            --bg-primary: #1a1a1a;
+            --text-primary: #e0e0e0;
+            --accent: #F9A002;
+            --secondary: #2d2d2d;
+            --card-bg: #333333;
+            --shadow: rgba(249, 160, 2, 0.2);
+            --about-bg: #262626;
+            --highlight: #F9A002;
+            --card-border: rgba(249, 160, 2, 0.3);
+            --gradient-start: #F9A002;
+            --gradient-end: #F57C00;
+            --nav-bg: rgba(26, 26, 26, 0.9);
+            --nav-text: #e0e0e0;
+            --hero-pattern-color: rgba(249, 160, 2, 0.1);
+            --form-bg: #333333;
+        }
+
+        [data-theme="neon"] {
+            --bg-primary: #0f0f23;
+            --text-primary: #ffffff;
+            --accent: #ff00ff;
+            --secondary: #1a1a36;
+            --card-bg: #191932;
+            --shadow: rgba(255, 0, 255, 0.3);
+            --about-bg: #14142b;
+            --highlight: #00ffff;
+            --card-border: rgba(0, 255, 255, 0.3);
+            --gradient-start: #ff00ff;
+            --gradient-end: #00ffff;
+            --nav-bg: rgba(15, 15, 35, 0.9);
+            --nav-text: #ffffff;
+            --hero-pattern-color: rgba(255, 0, 255, 0.1);
+            --form-bg: #191932;
+        }
+
+        [data-theme="forest"] {
+            --bg-primary: #f3f8f2;
+            --text-primary: #2c3e50;
+            --accent: #2ecc71;
+            --secondary: #e8f5e9;
+            --card-bg: #ffffff;
+            --shadow: rgba(46, 204, 113, 0.2);
+            --about-bg: #edf7ed;
+            --highlight: #27ae60;
+            --card-border: rgba(46, 204, 113, 0.2);
+            --gradient-start: #2ecc71;
+            --gradient-end: #27ae60;
+            --nav-bg: rgba(243, 248, 242, 0.9);
+            --nav-text: #2c3e50;
+            --hero-pattern-color: rgba(46, 204, 113, 0.1);
+            --form-bg: #ffffff;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -151,7 +205,7 @@
             display: inline-block;
             padding: 0.8rem 1.5rem;
             margin: 0.5rem;
-            background: #1a1a1a;
+            background: var(--secondary);
             border: 1px solid var(--highlight);
             border-radius: 8px;
             font-size: 1rem;
@@ -177,7 +231,7 @@
 
         .projects {
             padding: 6rem 2rem;
-            background: var(--bg-primary);
+            background: var(--accent);
         }
 
         .section-title {
@@ -206,7 +260,7 @@
         }
 
         .project-card:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
             box-shadow: 0 15px 40px var(--shadow);
         }
 
@@ -446,9 +500,81 @@
             transform: translateY(0);
         }
 
+      .theme-selector {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        box-shadow: 0 5px 20px var(--shadow);
+        z-index: 1000;
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition: opacity 0.3s, transform 0.3s;
+      }
+      
+      .theme-selector.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+      }
+      
+      .theme-option {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.2s;
+        border: 2px solid var(--bg-primary);
+      }
+      
+      .theme-option:hover {
+        transform: scale(1.2);
+      }
+      
+      /* Theme colors */
+      .theme-option[data-theme="light"] {
+        background: linear-gradient(135deg, #ffffff, #f5f5f5);
+        border-color: #333333;
+      }
+      
+      .theme-option[data-theme="dark"] {
+        background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+        border-color: #64b5f6;
+      }
+      
+      .theme-option[data-theme="industrial"] {
+        background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+        border-color: #F9A002;
+      }
+      
+      .theme-option[data-theme="neon"] {
+        background: linear-gradient(135deg, #0f0f23, #1a1a36);
+        border-color: #ff00ff;
+      }
+      
+      .theme-option[data-theme="forest"] {
+        background: linear-gradient(135deg, #f3f8f2, #e8f5e9);
+        border-color: #2ecc71;
+      }
+
     </style>
 </head>
 <body data-scroll-container>
+
+  <div class="theme-selector">
+    <div class="theme-option" data-theme="light" title="Light Theme"></div>
+    <div class="theme-option" data-theme="dark" title="Dark Theme"></div>
+    <div class="theme-option" data-theme="industrial" title="Industrial Theme"></div>
+    <div class="theme-option" data-theme="neon" title="Neon Theme"></div>
+    <div class="theme-option" data-theme="forest" title="Forest Theme"></div>
+  </div>
+  
     <div class="scroll-progress">
         <div class="progress-bar"></div>
     </div>
@@ -609,8 +735,11 @@
 
         function toggleTheme() {
             const body = document.body;
-            const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const currentTheme = body.getAttribute('data-theme') || 'light';
+            const themes = ['light', 'dark', 'industrial', 'neon', 'forest'];
+            const currentIndex = themes.indexOf(currentTheme);
+            const nextIndex = (currentIndex + 1) % themes.length;
+            const newTheme = themes[nextIndex];
             body.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
         }
