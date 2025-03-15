@@ -25,8 +25,14 @@
             --about-bg: #f8f9fa;
             --highlight: #4a90e2;
             --card-border: rgba(74, 144, 226, 0.2);
+            --gradient-start: #4a90e2;
+            --gradient-end: #357abf;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --nav-text: #333333;
+            --hero-pattern-color: rgba(74, 144, 226, 0.1);
+            --form-bg: #ffffff;
         }
-
+        
         [data-theme="dark"] {
             --bg-primary: #1a1a1a;
             --text-primary: #ffffff;
@@ -37,8 +43,14 @@
             --about-bg: #2d2d2d;
             --highlight: #64ffda;
             --card-border: rgba(100, 255, 218, 0.2);
+            --gradient-start: #64b5f6;
+            --gradient-end: #4a90e2;
+            --nav-bg: rgba(26, 26, 26, 0.95);
+            --nav-text: #ffffff;
+            --hero-pattern-color: rgba(100, 181, 246, 0.1);
+            --form-bg: #333333;
         }
-
+        
         [data-theme="industrial"] {
             --bg-primary: #1a1a1a;
             --text-primary: #e0e0e0;
@@ -56,41 +68,95 @@
             --hero-pattern-color: rgba(249, 160, 2, 0.1);
             --form-bg: #333333;
         }
-
-        [data-theme="neon"] {
-            --bg-primary: #0f0f23;
-            --text-primary: #ffffff;
-            --accent: #ff00ff;
-            --secondary: #1a1a36;
-            --card-bg: #191932;
-            --shadow: rgba(255, 0, 255, 0.3);
-            --about-bg: #14142b;
-            --highlight: #00ffff;
-            --card-border: rgba(0, 255, 255, 0.3);
-            --gradient-start: #ff00ff;
-            --gradient-end: #00ffff;
-            --nav-bg: rgba(15, 15, 35, 0.9);
-            --nav-text: #ffffff;
-            --hero-pattern-color: rgba(255, 0, 255, 0.1);
-            --form-bg: #191932;
-        }
-
-        [data-theme="forest"] {
-            --bg-primary: #f3f8f2;
-            --text-primary: #2c3e50;
-            --accent: #2ecc71;
-            --secondary: #e8f5e9;
+        
+        [data-theme="light-industrial"] {
+            --bg-primary: #f5f5f5;
+            --text-primary: #333333;
+            --accent: #F9A002;
+            --secondary: #e8e8e8;
             --card-bg: #ffffff;
-            --shadow: rgba(46, 204, 113, 0.2);
-            --about-bg: #edf7ed;
-            --highlight: #27ae60;
-            --card-border: rgba(46, 204, 113, 0.2);
-            --gradient-start: #2ecc71;
-            --gradient-end: #27ae60;
-            --nav-bg: rgba(243, 248, 242, 0.9);
-            --nav-text: #2c3e50;
-            --hero-pattern-color: rgba(46, 204, 113, 0.1);
+            --shadow: rgba(249, 160, 2, 0.15);
+            --about-bg: #efefef;
+            --highlight: #F57C00;
+            --card-border: rgba(249, 160, 2, 0.2);
+            --gradient-start: #F9A002;
+            --gradient-end: #F57C00;
+            --nav-bg: rgba(245, 245, 245, 0.95);
+            --nav-text: #333333;
+            --hero-pattern-color: rgba(249, 160, 2, 0.08);
             --form-bg: #ffffff;
+        }
+        
+        [data-theme="ruby"] {
+            --bg-primary: #0d0809;
+            --text-primary: #f1f1f1;
+            --accent: #e63946;
+            --secondary: #1d1517;
+            --card-bg: #251a1c;
+            --shadow: rgba(230, 57, 70, 0.25);
+            --about-bg: #1d1517;
+            --highlight: #ff6b6b;
+            --card-border: rgba(255, 107, 107, 0.3);
+            --gradient-start: #e63946;
+            --gradient-end: #a4161a;
+            --nav-bg: rgba(13, 8, 9, 0.95);
+            --nav-text: #f1f1f1;
+            --hero-pattern-color: rgba(230, 57, 70, 0.1);
+            --form-bg: #251a1c;
+        }
+        
+        [data-theme="light-ruby"] {
+            --bg-primary: #fff5f5;
+            --text-primary: #2d3748;
+            --accent: #e53e3e;
+            --secondary: #fed7d7;
+            --card-bg: #ffffff;
+            --shadow: rgba(229, 62, 62, 0.15);
+            --about-bg: #fefafa;
+            --highlight: #c53030;
+            --card-border: rgba(229, 62, 62, 0.2);
+            --gradient-start: #e53e3e;
+            --gradient-end: #c53030;
+            --nav-bg: rgba(255, 245, 245, 0.95);
+            --nav-text: #2d3748;
+            --hero-pattern-color: rgba(229, 62, 62, 0.08);
+            --form-bg: #ffffff;
+        }
+        
+        [data-theme="emerald"] {
+            --bg-primary: #f4f9f4;
+            --text-primary: #2f3e46;
+            --accent: #38a169;
+            --secondary: #e6f2e6;
+            --card-bg: #ffffff;
+            --shadow: rgba(56, 161, 105, 0.15);
+            --about-bg: #ebf5eb;
+            --highlight: #2f855a;
+            --card-border: rgba(56, 161, 105, 0.2);
+            --gradient-start: #38a169;
+            --gradient-end: #2f855a;
+            --nav-bg: rgba(244, 249, 244, 0.95);
+            --nav-text: #2f3e46;
+            --hero-pattern-color: rgba(56, 161, 105, 0.08);
+            --form-bg: #ffffff;
+        }
+        
+        [data-theme="dark-emerald"] {
+            --bg-primary: #1a2721;
+            --text-primary: #f1f5f1;
+            --accent: #48bb78;
+            --secondary: #243a30;
+            --card-bg: #2c4a3c;
+            --shadow: rgba(72, 187, 120, 0.2);
+            --about-bg: #243a30;
+            --highlight: #68d391;
+            --card-border: rgba(104, 211, 145, 0.3);
+            --gradient-start: #48bb78;
+            --gradient-end: #38a169;
+            --nav-bg: rgba(26, 39, 33, 0.95);
+            --nav-text: #f1f5f1;
+            --hero-pattern-color: rgba(72, 187, 120, 0.1);
+            --form-bg: #2c4a3c;
         }
 
         * {
@@ -708,24 +774,22 @@
     <!-- Contact Section -->
 
     <section class="contact">
-        <h2 class="section-title">Get in Touch</h2>
-        <div class="contact-container">
-            <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Your name">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="Your email">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Your message"></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/bananached1@gmail.com" method="POST">
+          <!-- FormSubmit configuration options -->
+          <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="Your email">
+          </div>
+          <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Your message"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+      </form>
     </section>
 
     <script>
@@ -736,7 +800,7 @@
         function toggleTheme() {
             const body = document.body;
             const currentTheme = body.getAttribute('data-theme') || 'light';
-            const themes = ['light', 'dark', 'industrial', 'neon', 'forest'];
+            const themes = ['light', 'dark', 'light-industrial', 'industrial', 'light-ruby', 'ruby', 'emerald', 'dark-emerald'];
             const currentIndex = themes.indexOf(currentTheme);
             const nextIndex = (currentIndex + 1) % themes.length;
             const newTheme = themes[nextIndex];
