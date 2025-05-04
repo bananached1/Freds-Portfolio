@@ -624,399 +624,9 @@
         border-color: #2ecc71;
       }
 
-        .animated-text {
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--accent), var(--highlight));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 800;
-            opacity: 0;
-            animation: fadeInUp 1s forwards 0.5s;
-        }
-        
-        .animated-subtitle {
-            font-size: 1.8rem;
-            color: var(--text-primary);
-            opacity: 0;
-            display: inline-block;
-            animation: fadeInUp 1s forwards 1s;
-        }
-        
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            color: var(--text-primary);
-            opacity: 0;
-            animation: fadeIn 1s forwards 2s;
-        }
-        
-        .scroll-arrow {
-            font-size: 24px;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            pointer-events: none;
-        }
-        
-        .hero-content {
-            z-index: 2;
-            position: relative;
-        }
-                
-                @keyframes bounce {
-                    0%, 20%, 50%, 80%, 100% {
-                        transform: translateY(0);
-                    }
-                    40% {
-                        transform: translateY(-10px);
-                    }
-                    60% {
-                        transform: translateY(-5px);
-                    }
-                }
-
-
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 0;
-            border: 1px solid var(--card-border);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            overflow: hidden;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-        
-        .project-card-inner {
-            padding: 0 0 1.5rem;
-            height: 100%;
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-        }
-        
-        .project-card:hover .project-card-inner {
-            transform: translateZ(20px);
-        }
-        
-        .project-image {
-            height: 160px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .project-icon {
-            font-size: 3rem;
-        }
-        
-        .project-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--highlight);
-            padding: 0 1.5rem;
-        }
-        
-        .project-card p {
-            color: var(--text-primary);
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-            padding: 0 1.5rem;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem 1.5rem;
-        }
-        
-        .project-link {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1.5rem;
-            padding: 0 1.5rem;
-            font-weight: bold;
-            color: var(--highlight);
-        }
-        
-        .arrow {
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover .arrow {
-            transform: translateX(5px);
-        }
-
-        .main-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 1.2rem 2rem;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--nav-bg);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.4s ease, background-color 0.3s;
-        }
-        
-        .nav-logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--highlight);
-            background: linear-gradient(45deg, var(--accent), var(--highlight));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-link {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
-            transition: color 0.3s;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--highlight);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        .nav-link.active {
-            color: var(--highlight);
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-        }
-
-
-        .contact {
-            padding: 6rem 2rem;
-            background: var(--secondary);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact::before {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: var(--accent);
-            opacity: 0.05;
-            top: -100px;
-            left: -100px;
-        }
-        
-        .contact::after {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: var(--highlight);
-            opacity: 0.05;
-            bottom: -200px;
-            right: -200px;
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--form-bg);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px var(--shadow);
-            position: relative;
-            z-index: 2;
-        }
-        
-        .form-group {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem 0;
-            font-size: 1rem;
-            color: var(--text-primary);
-            border: none;
-            border-bottom: 1px solid var(--card-border);
-            outline: none;
-            background: transparent;
-            transition: border-color 0.3s;
-        }
-        
-        .form-label {
-            position: absolute;
-            top: 1rem;
-            left: 0;
-            font-size: 1rem;
-            color: var(--text-primary);
-            pointer-events: none;
-            transition: 0.3s ease all;
-            opacity: 0.7;
-        }
-        
-        .form-group input:focus ~ .form-label,
-        .form-group textarea:focus ~ .form-label,
-        .form-group input:not(:placeholder-shown) ~ .form-label,
-        .form-group textarea:not(:placeholder-shown) ~ .form-label {
-            top: -20px;
-            font-size: 0.9rem;
-            color: var(--highlight);
-            opacity: 1;
-        }
-        
-        .form-line {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--highlight);
-            transition: 0.3s ease width;
-        }
-        
-        .form-group input:focus ~ .form-line,
-        .form-group textarea:focus ~ .form-line {
-            width: 100%;
-        }
-        
-        .submit-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: var(--highlight);
-            color: var(--bg-primary);
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .submit-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: transform 0.4s ease;
-            transform: skewX(-30deg);
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-3px);
-        }
-        
-        .submit-btn:hover::before {
-            transform: translateX(200%) skewX(-30deg);
-        }
-        
-        .btn-icon {
-            transition: transform 0.3s ease;
-        }
-        
-        .submit-btn:hover .btn-icon {
-            transform: translateX(5px);
-        }
-        
-        .form-status {
-            margin-top: 1rem;
-            text-align: center;
-            font-weight: bold;
-            height: 20px;
-        }
-        
-        .form-status.success {
-            color: #38a169;
-        }
-        
-        .form-status.error {
-            color: #e53e3e;
-        }
-        
-        /* Animation for form */
-        .animated-form {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .animated-form.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
     </style>
 </head>
 <body data-scroll-container>
-    <div id="particles-js"></div>
 
   <div class="theme-selector">
     <div class="theme-option" data-theme="light" title="Light Theme"></div>
@@ -1029,29 +639,14 @@
     <div class="scroll-progress">
         <div class="progress-bar"></div>
     </div>
-    <nav class="main-nav" id="mainNav">
-    <div class="nav-logo">FS</div>
-    <div class="nav-links">
-        <a href="#" class="nav-link active" data-section="hero">Home</a>
-        <a href="#" class="nav-link" data-section="about-section">About</a>
-        <a href="#" class="nav-link" data-section="projects">Projects</a>
-        <a href="#" class="nav-link" data-section="contact">Contact</a>
-    </div>
     <button class="theme-toggle" aria-label="Toggle theme">🌓</button>
-</nav>
-
-    
 
     <section class="hero">
-    <div class="hero-content">
-        <h1 class="animated-text">Fred Smith</h1>
-        <p class="animated-subtitle">Developer. Designer. Creator.</p>
-        <div class="scroll-indicator">
-            <span>Scroll Down</span>
-            <div class="scroll-arrow">&#8595;</div>
+        <div class="hero-content">
+            <h1>Fred Smith</h1>
+            <p>I made this cause im bored</p>
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="about-section">
         <div class="content-container">
@@ -1117,93 +712,61 @@
         </div>
     </section>
 
-    <div class="project-grid">
-    <div class="project-card tilt-effect">
-        <div class="project-card-inner">
-            <div class="project-image" style="background-color: var(--accent);">
-                <div class="project-icon">💬</div>
+    <section class="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Live Communication Website</h3>
+                <p>A fully working live chat website for teams with servers and the other stuff you expect from a messaging website</p>
+                <div class="project-tags">
+                    <span class="project-tag">Full Stack</span>
+                    <span class="project-tag">Firebase</span>
+                    <span class="project-tag">Authentication</span>
+                </div>
             </div>
-            <h3>Live Communication Website</h3>
-            <p>A fully working live chat website for teams with servers and the other stuff you expect from a messaging website</p>
-            <div class="project-tags">
-                <span class="project-tag">Full Stack</span>
-                <span class="project-tag">Firebase</span>
-                <span class="project-tag">Authentication</span>
+            <div class="project-card">
+                <h3>3D printed guitar</h3>
+                <p>I made a full size guitar out of PLA, this is an ongoing project as I have not painted it or put electronics in yet.</p>
+                <div class="project-tags">
+                    <span class="project-tag">3D printing</span>
+                    <span class="project-tag">Electrics</span>
+                    <span class="project-tag">3D modeling</span>
+                </div>
             </div>
-            <div class="project-link">
-                <span class="view-project">View Project</span>
-                <span class="arrow">→</span>
-            </div>
-        </div>
-    </div>
-    
-    <div class="project-card tilt-effect">
-        <div class="project-card-inner">
-            <div class="project-image" style="background-color: var(--highlight);">
-                <div class="project-icon">🎸</div>
-            </div>
-            <h3>3D printed guitar</h3>
-            <p>I made a full size guitar out of PLA, this is an ongoing project as I have not painted it or put electronics in yet.</p>
-            <div class="project-tags">
-                <span class="project-tag">3D printing</span>
-                <span class="project-tag">Electrics</span>
-                <span class="project-tag">3D modeling</span>
-            </div>
-            <div class="project-link">
-                <span class="view-project">View Project</span>
-                <span class="arrow">→</span>
+            <div class="project-card">
+                <h3>Ongoing Projects</h3>
+                <p>I have a couple ongoing personal projects including 3D printing, more websites and RC cars.</p>
+                <div class="project-tags">
+                    <span class="project-tag">3D printing</span>
+                    <span class="project-tag">Websites</span>
+                    <span class="project-tag">RC cars</span>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="project-card tilt-effect">
-        <div class="project-card-inner">
-            <div class="project-image" style="background-color: var(--accent);">
-                <div class="project-icon">🚀</div>
-            </div>
-            <h3>Ongoing Projects</h3>
-            <p>I have a couple ongoing personal projects including 3D printing, more websites and RC cars.</p>
-            <div class="project-tags">
-                <span class="project-tag">3D printing</span>
-                <span class="project-tag">Websites</span>
-                <span class="project-tag">RC cars</span>
-            </div>
-            <div class="project-link">
-                <span class="view-project">View Project</span>
-                <span class="arrow">→</span>
-            </div>
-        </div>
-    </div>
-</div>
+    </section>
+
     <!-- Contact Section -->
 
     <section class="contact">
-    <h2 class="section-title">Get In Touch</h2>
-    <div class="contact-container">
-        <form class="contact-form animated-form" id="contactForm" action="https://formsubmit.co/bananached1@gmail.com" method="POST">
+      <div class="contact-container">
+          <form class="contact-form" id="contactForm" action="https://formsubmit.co/bananached1@gmail.com" method="POST">
+            <!-- FormSubmit configuration options -->
             <div class="form-group">
-                <input type="text" id="name" name="name" required placeholder=" ">
-                <label for="name" class="form-label">Name</label>
-                <div class="form-line"></div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
             </div>
             <div class="form-group">
-                <input type="email" id="email" name="email" required placeholder=" ">
-                <label for="email" class="form-label">Email</label>
-                <div class="form-line"></div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Your email">
             </div>
             <div class="form-group">
-                <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-                <label for="message" class="form-label">Message</label>
-                <div class="form-line"></div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Your message"></textarea>
             </div>
-            <button type="submit" class="submit-btn">
-                <span class="btn-text">Send Message</span>
-                <span class="btn-icon">→</span>
-            </button>
-            <div class="form-status"></div>
+            <button type="submit" class="submit-btn">Send Message</button>
         </form>
-    </div>
-</section>
+      </div>
+    </section>
 
     <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1393,225 +956,5 @@
         }
     }
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        particlesJS('particles-js', {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": getComputedStyle(document.body).getPropertyValue('--accent')
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": getComputedStyle(document.body).getPropertyValue('--accent'),
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                }
-            },
-            "retina_detect": true
-        });
-    });
-
-
-    // Add this to your existing script
-document.addEventListener('DOMContentLoaded', () => {
-    // Tilt effect for project cards
-    const tiltCards = document.querySelectorAll('.tilt-effect');
-    
-    tiltCards.forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const cardRect = card.getBoundingClientRect();
-            const cardWidth = cardRect.width;
-            const cardHeight = cardRect.height;
-            const centerX = cardRect.left + cardWidth / 2;
-            const centerY = cardRect.top + cardHeight / 2;
-            const mouseX = e.clientX - centerX;
-            const mouseY = e.clientY - centerY;
-            
-            const rotateX = (mouseY / (cardHeight / 2)) * -8;
-            const rotateY = (mouseX / (cardWidth / 2)) * 8;
-            
-            card.querySelector('.project-card-inner').style.transform = 
-                `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.querySelector('.project-card-inner').style.transform = 
-                'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
-        });
-    });
-});
-
-
-
-    // Add this to your existing script
-document.addEventListener('DOMContentLoaded', () => {
-    // Scroll spy for navigation
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.3
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('class');
-                
-                navLinks.forEach(link => {
-                    if (link.getAttribute('data-section') === id) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            }
-        });
-    }, observerOptions);
-    
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-    
-    // Smooth scrolling for navigation links
-    navLinks.forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            const sectionId = link.getAttribute('data-section');
-            document.querySelector(`.${sectionId}`).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-    
-    // Hide/show navbar on scroll
-    let lastScrollY = window.scrollY;
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            if (window.scrollY > lastScrollY) {
-                document.getElementById('mainNav').style.transform = 'translateY(-100%)';
-            } else {
-                document.getElementById('mainNav').style.transform = 'translateY(0)';
-            }
-            lastScrollY = window.scrollY;
-        }
-    });
-});
-
-
-    // Add this to your existing script
-document.addEventListener('DOMContentLoaded', () => {
-    // Animate form on scroll
-    const formElement = document.querySelector('.animated-form');
-    
-    const formObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                formObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.2 });
-    
-    if (formElement) {
-        formObserver.observe(formElement);
-    }
-    
-    // Form submission handling
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.querySelector('.form-status');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            formStatus.textContent = 'Sending...';
-            formStatus.className = 'form-status';
-            
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-            
-            try {
-                const response = await fetch('https://formsubmit.co/bananached1@gmail.com', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-                
-                if (response.ok) {
-                    formStatus.textContent = 'Message sent successfully!';
-                    formStatus.className = 'form-status success';
-                    contactForm.reset();
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            } catch (error) {
-                formStatus.textContent = 'Failed to send message. Please try again.';
-                formStatus.className = 'form-status error';
-                console.error('Error:', error);
-            }
-        });
-    }
-});
-</script>
 </body>
 </html>
